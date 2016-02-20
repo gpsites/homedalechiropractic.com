@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- insert CSS for Default Concrete Theme //-->
+<style type="text/css">@import "../updates/concrete5.4.2.2/concrete/css/ccm.default.theme.css";</style>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Homedale Chiropractic :: </title>
+<meta name="description" content="" />
+<meta name="generator" content="concrete5 - 5.4.2.2" />
+
+<script type="text/javascript">
+var CCM_DISPATCHER_FILENAME = '/index.php';var CCM_CID = 0;var CCM_EDIT_MODE = false;var CCM_ARRANGE_MODE = false;var CCM_IMAGE_PATH = "/updates/concrete5.4.2.2/concrete/images";
+var CCM_TOOLS_PATH = "/index.php/tools/required";
+var CCM_REL = "";
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="../updates/concrete5.4.2.2/concrete/css/ccm.base.css?v=512740af3854c1eee00af97d3520cce4" />
+<script type="text/javascript" src="../updates/concrete5.4.2.2/concrete/js/jquery.js?v=512740af3854c1eee00af97d3520cce4"></script>
+<script type="text/javascript" src="../updates/concrete5.4.2.2/concrete/js/ccm.base.js?v=512740af3854c1eee00af97d3520cce4"></script>
+</head>
+<body>
+
+<div id="ccm-logo"><img src="../updates/concrete5.4.2.2/concrete/images/logo_menu.png" width="49" height="49" alt="Concrete CMS" /></div>
+
+<div id="ccm-theme-wrapper">
+
+
+<h1 class="error">Page Not Found</h1>
+
+No page could be found at this address.
+	<br/><br/>
+	
+<br/><br/>
+
+<a href="../index.html">Back to Home</a>.
+</div>
+
+</body>
+</html>

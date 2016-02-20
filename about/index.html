@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<!-- Site Header Content //-->
+<link rel="stylesheet" media="screen" type="text/css" href="../index.php/tools/css/themes/default/main.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../index.php/tools/css/themes/default/typography.css" />
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Homedale Chiropractic :: About</title>
+<meta name="description" content="" />
+<meta name="generator" content="concrete5 - 5.4.2.2" />
+
+<script type="text/javascript">
+var CCM_DISPATCHER_FILENAME = '/index.php';var CCM_CID = 47;var CCM_EDIT_MODE = false;var CCM_ARRANGE_MODE = false;var CCM_IMAGE_PATH = "/updates/concrete5.4.2.2/concrete/images";
+var CCM_TOOLS_PATH = "/index.php/tools/required";
+var CCM_REL = "";
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="../updates/concrete5.4.2.2/concrete/css/ccm.base.css?v=512740af3854c1eee00af97d3520cce4" />
+<script type="text/javascript" src="../updates/concrete5.4.2.2/concrete/js/jquery.js?v=512740af3854c1eee00af97d3520cce4"></script>
+<script type="text/javascript" src="../updates/concrete5.4.2.2/concrete/js/ccm.base.js?v=512740af3854c1eee00af97d3520cce4"></script>
+<link rel="stylesheet" type="text/css" href="../updates/concrete5.4.2.2/concrete/blocks/slideshow/view.css?v=512740af3854c1eee00af97d3520cce4" />
+
+</head>
+<body>
+<div id="page">
+	<div id="headerSpacer"></div>
+	<div id="header">
+
+
+		<div id="headerNav">
+			<ul class="nav-header"><li class=" first"><a href="../index.html"  >Home</a></li><li class=" "><a href="../services/index.html"  >Services</a></li><li class=" "><a href="../atlas/index.html"  >Booklet</a></li><li class=" "><a href="../promise/index.html"  >Promise</a></li><li class="nav-selected "><a class="nav-selected" href="index.html"  >About</a></li><li class=" "><a href="../contact/index.html"  >Contact</a></li></ul><div class="ccm-spacer">&nbsp;</div>		</div>
+
+		<h1 id="logo"><!--
+			--><a href="../index.html">Homedale Chiropractic</a><!--
+		--></h1>
+
+
+		<div class="spacer"></div>
+
+
+		<div id="header-area">
+			<div class="divider"></div>
+			<div id="header-area-inside">
+
+<script type="text/javascript">
+//<![CDATA[
+var ccmSlideShowHelper170 = {
+
+	bID:170,
+	imgNum:0,
+
+	init:function(){
+		this.displayWrap=$('#ccm-SlideshowBlock-display'+this.bID);
+		if(this.imgInfos.length==0){
+			//alert('There are no images in this slideshow');
+			return false;
+		}
+		var maxHeight=0;
+		for(var i=0;i<this.imgInfos.length;i++){
+			this.addImg(i);
+			if(maxHeight==0 || this.imgInfos[i].imgHeight > maxHeight)
+				maxHeight=this.imgInfos[i].imgHeight;
+		}
+		this.displayWrap.css('height',maxHeight);
+
+
+		//center images
+		for(var i=0;i<this.imgInfos.length;i++){
+			if( this.imgInfos[i].imgHeight < maxHeight){
+				var t=((maxHeight - this.imgInfos[i].imgHeight)/2);
+				this.imgEls[i].css('top',t);
+			}
+		}
+		this.nextImg();
+	},
+	nextImg:function(){
+		if(this.imgNum>=this.imgInfos.length) this.imgNum=0;
+		this.imgEls[this.imgNum].css('opacity',0);
+		this.imgEls[this.imgNum].css('display','block');
+		this.imgEls[this.imgNum].animate({opacity:1},
+			this.imgInfos[this.imgNum].fadeDuration*1000,'',function(){ccmSlideShowHelper170.preparefadeOut()});
+		var prevNum=this.imgNum-1;
+		if(prevNum<0) prevNum=this.imgInfos.length-1;
+		if(this.imgInfos.length==1) return;
+		this.imgEls[prevNum].animate({opacity:0},this.imgInfos[this.imgNum].fadeDuration*800,function(){this.style.zIndex=1;});
+	},
+	preparefadeOut:function(){
+		if(this.imgInfos.length==1) return;
+		var milisecDuration=parseInt(this.imgInfos[this.imgNum].duration)*1000;
+		this.imgEls[this.imgNum].css('z-index',2);
+		setTimeout('ccmSlideShowHelper'+170+'.nextImg();',milisecDuration);
+		this.imgNum++;
+	},
+	maxHeight:0,
+	imgEls:[],
+	addImg:function(num){
+		var el=document.createElement('div');
+		el.id="slideImgWrap"+num;
+		el.className="slideImgWrap";
+		if(this.imgInfos[num].fullFilePath.length>0)
+			 imgURL=this.imgInfos[num].fullFilePath;
+		else imgURL='/files/'+this.imgInfos[num].fileName;
+		//el.innerHTML='<img src="'+imgURL+'" >';
+		el.innerHTML='<div style="height:'+this.imgInfos[num].imgHeight+'px; background:url(\''+escape(imgURL)+'\') center no-repeat">&nbsp;</div>';
+		//alert(imgURL);
+		if(this.imgInfos[num].url.length>0) {
+			//el.linkURL=this.imgInfos[num].url;
+			var clickEvent='onclick="return ccmSlideShowHelper170.imgClick( this.href  );"';
+			el.innerHTML='<a href="'+this.imgInfos[num].url+'" '+clickEvent+' >'+el.innerHTML+'</a>';
+		}
+		el.style.display='none';
+		this.displayWrap.append(el);
+		var jqEl=$(el);
+		this.imgEls.push(jqEl);
+	},
+	imgClick:function(linkURL){
+		//override for custom behavior
+	},
+	imgInfos:[
+				{
+				fileName:"Packer_John_2.jpg",
+				fullFilePath:"/files/4313/9072/0266/Packer_John_2.jpg",
+				duration:5,
+				fadeDuration:2,
+				url:"",
+				groupSet:0,
+				imgHeight:192			}
+		,			{
+				fileName:"Cabin_2.jpg",
+				fullFilePath:"/files/1113/9072/0207/Cabin_2.jpg",
+				duration:5,
+				fadeDuration:2,
+				url:"",
+				groupSet:0,
+				imgHeight:192			}
+		,			{
+				fileName:"Sunset_2.jpg",
+				fullFilePath:"/files/2513/9072/0308/Sunset_2.jpg",
+				duration:5,
+				fadeDuration:2,
+				url:"",
+				groupSet:0,
+				imgHeight:192			}
+		,			{
+				fileName:"Forehand.jpg",
+				fullFilePath:"/files/2413/9072/0236/Forehand.jpg",
+				duration:5,
+				fadeDuration:2,
+				url:"",
+				groupSet:0,
+				imgHeight:143			}
+		,			{
+				fileName:"Packer_John_1.jpg",
+				fullFilePath:"/files/4713/9072/0280/Packer_John_1.jpg",
+				duration:5,
+				fadeDuration:2,
+				url:"",
+				groupSet:0,
+				imgHeight:192			}
+			]
+}
+$(function(){ccmSlideShowHelper170.init();});
+//]]>
+</script>
+
+<div id="ccm-SlideshowBlock-display170" class="ccm-SlideshowBlock-display">
+<div id="ccm-SlideshowBlock-heightSetter170" class="ccm-SlideshowBlock-heightSetter"></div>
+<div class="ccm-SlideshowBlock-clear" ></div>
+</div>
+
+			</div>
+
+							<div class="divider"></div>
+					</div>
+	</div>
+
+	<div id="central" class="central-left">
+		<div id="sidebar">
+			<img border="0" class="ccm-image-block" alt="" src="../files/cache/cbe9b946ec536a3475af17d3d02de304.JPG"  width="200" height="163" />
+<div id="HTMLBlock166" class="HTMLBlock">
+<p style="margin:0;padding:0">&nbsp;</p></div><img border="0" class="ccm-image-block" alt="" src="../files/cache/0c89f9e16465453c575052f185409080.JPG"  width="220" height="165" />
+<div id="HTMLBlock114" class="HTMLBlock">
+<p style="margin:0;padding:0">&nbsp;</p></div><img border="0" class="ccm-image-block" alt="" src="../files/cache/f0dc36d51183ac9d3fbb4847c5480eff.jpg"  width="220" height="165" />
+		</div>
+
+		<div id="body">
+			<h2 style="text-align: left;"><em><span style="color: #888888;"><strong>Homedale Chiropractic &ndash; Established in 1988</strong></span></em></h2>
+<p><span style="color: #888888;"><br /></span></p>
+<h2>Dr J Edward Perkins</h2>
+<p>Dr. Perkins was born near Denver, Colorado. At the age of one his family moved to Boise Idaho, and has lived in Idaho since then. He graduated near the top of his class at Borah High School and was a three-year letterman and state champion in tennis. Dr. Perkins went on to play tennis for Boise State University for four years as a letterman. During his tennis career he has been ranked number one in the state of Idaho in the open division multiple times in singles, doubles, and mixed doubles. He went on to play professional tennis on the satellite circuits and achieved an ATP ranking of 700 in the world.</p>
+<p>Dr. Perkins graduated from Boise State University with a BS in Health Science Studies. He then graduated with honors from Western States Chiropractic College in 1988, with a Doctorate of Chiropractic (DC). After passing the state board examinations in both Oregon and Idaho, he began practice in Homedale, ID&nbsp;in 1989. Following a three-year postgraduate course of study, in 1995,&nbsp;he was awarded a Diplomate of the American Board of Chiropractic Orthopedists (DABCO). He also completed two other courses of post graduate studies: one titled Integrated Health Services in 2002 which emphasizes wellness and nutrition, and another titled Certified Chiropractic Extremities Practitioner (CCEP) in 2001, which emphasizes sports medicine and the treatment of athletic injuries. In 2010, Dr. Perkins completed his doctoral studies in naturopathic medicine and was granted the degree, Naturopathic Medical Doctor (NMD).</p>
+<p>Dr. Perkins was chosen to represent Chiropractic at the NCAA Outdoor Track and Field Championships held in Boise in 1994. He has also helped athletes at the Boise stop on &nbsp;the Nike golf tour and since 2002 has been heavily involved in treating competitors involved with the Idaho Cowboy Association (ICA), and the Professional Rodeo Cowboy Association (PRCA).</p>
+<p>Dr. Perkins is proficient in the following techniques of Chiropractic: Diversified, Leander traction, Gonstead, Activator, Logan basic. As noted above he sees many patients for sports related injury, customized foot orthotics, as well as whiplash rehabilitation. His love for chiropractic is very apparent and his commitment toward his patients is genuine!</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px; font-weight: bold; line-height: 24px;">Family</span></p>
+<p style="padding-left: 30px;">Wife: <strong>Darline</strong></p>
+<p style="padding-left: 30px;">Daughters: <strong>Jessica &amp; Jennifer</strong></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px; font-weight: bold; line-height: 24px;">Education</span></p>
+<ul>
+<li>1988- Doctorate of Chiropractic (DC),&nbsp;Honors Graduate , Western States Chiropractic College, Portland ,OR &nbsp; &nbsp;</li>
+<li>Post graduate studies; Diplomate in Chiropractic Orthopedics from Los Angles Chiropractic College &nbsp;(DABCO)</li>
+<li>Post graduate studies; Certified Chiropractic Extremities Practitioner &nbsp;(CCEP)</li>
+<li>Doctorate in Naturopathic Medicine (NMD)</li>
+<li>BS&nbsp;in Health Science Studies, Boise State University&nbsp;</li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px; font-weight: bold; line-height: 24px;"> Staff </span></p>
+<p style="padding-left: 30px;"><strong>Carmen</strong>: Office Manager</p>
+<p style="padding-left: 30px;"><strong>Layla</strong>: Chiropractic Assistant, Specialized Insurance Billings</p>
+<p style="padding-left: 30px;"><strong>Judy</strong>: Chiropractic Assistant, Physio-Theraputics, Nutrition</p>
+<p style="padding-left: 30px;"><strong>Ashley</strong>: Chiropractic Assistant, Receptionist</p>
+<p style="padding-left: 30px;"><strong>Tami</strong>: Receptionist</p>
+<p style="padding-left: 30px;"><strong>Jessica</strong>: Chiropractic Assistant, Receptionist</p>		</div>
+
+		<div class="spacer">&nbsp;</div>
+	</div>
+
+	<div id="footer">
+
+			&copy; 2016 <a href="../index.html">Homedale Chiropractic</a>.
+			&nbsp;&nbsp;
+			All rights reserved.
+
+	</div>
+
+</div>
+
+
+</body>
+</html>
