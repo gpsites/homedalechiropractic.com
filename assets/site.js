@@ -11,6 +11,7 @@ if (carousel) {
   let paused = motion.matches;
   let hovering = false;
   let timer;
+  let controlsTimer;
   let playbackIntent;
 
   function show(index) {
@@ -35,7 +36,23 @@ if (carousel) {
     }
   }
 
+  function revealTouchControls() {
+    clearTimeout(controlsTimer);
+    carousel.classList.add("is-controls-visible");
+    controlsTimer = setTimeout(() => {
+      carousel.classList.remove("is-controls-visible");
+      if (controls.contains(document.activeElement)) {
+        document.activeElement.blur();
+      }
+    }, 4000);
+  }
+
   controls.hidden = false;
+  carousel.addEventListener("pointerdown", (event) => {
+    if (event.pointerType !== "mouse") {
+      revealTouchControls();
+    }
+  });
   // Preserve pointer intent when focusing the button also pauses rotation.
   playback.addEventListener("pointerdown", () => {
     playbackIntent = !paused;

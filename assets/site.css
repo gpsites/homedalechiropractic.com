@@ -1634,6 +1634,8 @@ address {
   transition:
     opacity 180ms ease,
     background-color 180ms ease;
+  opacity: 0;
+  pointer-events: none;
 }
 .carousel-controls[hidden] {
   display: none;
@@ -1662,11 +1664,12 @@ address {
   text-align: center;
   font-variant-numeric: tabular-nums;
 }
+.photo-carousel:focus-within .carousel-controls,
+.photo-carousel.is-controls-visible .carousel-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
 @media (hover: hover) and (pointer: fine) {
-  .photo-carousel .carousel-controls {
-    opacity: 0;
-    pointer-events: none;
-  }
   .photo-carousel:hover .carousel-controls,
   .photo-carousel:focus-within .carousel-controls {
     opacity: 1;
