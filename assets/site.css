@@ -383,11 +383,13 @@ address {
   position: absolute;
   bottom: 13px;
   right: 16px;
-  background: var(--forest);
+  background: rgb(24 57 45 / 42%);
   color: var(--paper);
   padding: 6px 9px;
   font-size: 9px;
   letter-spacing: 0.2px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 .landscape figcaption span {
   margin-inline: 5px;
@@ -1623,10 +1625,15 @@ address {
   left: 16px;
   display: flex;
   align-items: center;
-  background: var(--forest);
+  background: rgb(24 57 45 / 42%);
   color: var(--paper);
   padding: 2px 5px;
   gap: 3px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  transition:
+    opacity 180ms ease,
+    background-color 180ms ease;
 }
 .carousel-controls[hidden] {
   display: none;
@@ -1647,13 +1654,24 @@ address {
   margin-right: 3px;
 }
 .carousel-controls button:hover {
-  background: #3a5548;
+  background: rgb(255 255 255 / 12%);
 }
 .carousel-count {
   font-size: 10px;
   min-width: 31px;
   text-align: center;
   font-variant-numeric: tabular-nums;
+}
+@media (hover: hover) and (pointer: fine) {
+  .photo-carousel .carousel-controls {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .photo-carousel:hover .carousel-controls,
+  .photo-carousel:focus-within .carousel-controls {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 .home-landscape .landscape-note {
   position: relative;

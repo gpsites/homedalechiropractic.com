@@ -17,10 +17,9 @@ Open http://127.0.0.1:4173.
 Edit the HTML pages directly. Each page contains its complete content, navigation, and footer:
 
 - `index.html`: home page and photo carousel.
-- `about/index.html`: biography, family, education, staff, and photo gallery.
+- `about/index.html`: biography, education, family, team members, and photo gallery.
 - `chiropractic/index.html`: adjusting techniques and physiotherapeutics.
 - `naturopathic/index.html`: nutritional therapies and injection therapies.
-- `services/index.html`: links to both service pages, preserving the original URL.
 - `GPA/index.html`: Gravitational Pattern Alignment.
 - `atlas/index.html`: complete Atlas booklet with chapter navigation.
 - `promise/index.html`: patient promise.
