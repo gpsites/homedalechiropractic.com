@@ -1,6 +1,6 @@
 # Homedale Chiropractic
 
-A plain HTML, CSS, and JavaScript website for Dr J Edward Perkins. No framework, package installation, CMS, or build step is required.
+A plain HTML, CSS, and JavaScript website for Dr J Edward Perkins. No framework, package installation, CMS, or production build step is required.
 
 ## Preview
 
@@ -14,7 +14,7 @@ Open http://127.0.0.1:4173.
 
 ## Edit
 
-Edit the HTML pages directly. Each page contains its complete content, navigation, and footer:
+Edit page-specific content directly in the HTML pages. Each deployed page remains a complete, standalone HTML document:
 
 - `index.html`: home page and photo carousel.
 - `about/index.html`: biography, education, family, team members, and photo gallery.
@@ -34,10 +34,36 @@ Shared assets:
 - `assets/three-fingers.svg`: standalone logo; its inline copies appear in page headers and footers.
 - `assets/favicon.svg`: browser icon.
 
-When changing shared header or footer content, update all nine pages. Keep sitemap entries in sync with page URLs.
+Shared markup:
+
+- `partials/header.html`: announcement bar, logo, and primary navigation.
+- `partials/footer.html`: call-to-action band, contact details, and footer navigation.
+- `partials/brand.html`: logo markup used by both shared partials.
+- `scripts/sync-shared.sh`: mechanically copies the partials into every page, resolving relative paths and the current-page navigation state. It uses only POSIX shell and standard utilities available on macOS and Linux.
+
+After changing a partial, synchronize and verify the pages:
+
+```sh
+./scripts/sync-shared.sh
+./scripts/sync-shared.sh --check
+```
+
+The synchronizer requires only POSIX `/bin/sh` and standard command-line utilities. It is tested on macOS and in Alpine Linux 3.20 using BusyBox. No Python, Node.js, package installation, or network access is required to synchronize the HTML.
+
+Do not edit between the `shared-header` or `shared-footer` comments in a page; those regions are replaced by the sync script. Keep sitemap entries in sync with page URLs.
 
 ## Hosting
 
 The site uses GitHub Pages and the existing `CNAME`. Existing page URLs are preserved, including uppercase `/GPA/`; the two service pages have their own URLs. The only external embed is Google Maps on the contact page; fonts and other assets are local.
+
+Before deployment, run:
+
+```sh
+./scripts/sync-shared.sh
+./scripts/sync-shared.sh --check
+git diff --check
+```
+
+Commit the canonical partials and synchronized HTML pages together, then publish the commit to `gh-pages` with a normal push. Never force-push.
 
 Work is being reviewed locally on `codex/modern-redesign`. Do not push or publish before the user approves the design. Never force-push.
