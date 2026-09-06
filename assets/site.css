@@ -367,6 +367,78 @@ address {
 .portrait-hero figcaption a:hover {
   background: #3a5548;
 }
+.home-hero-open {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 48px;
+}
+.open-portrait {
+  position: relative;
+  container-type: inline-size;
+  display: block;
+  width: 100%;
+  height: 430px;
+  overflow: hidden;
+  border-radius: 46% 46% 10px 10px / 34% 34% 10px 10px;
+}
+.open-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 27%;
+}
+.portrait-label {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgb(24 57 45 / 42%);
+  color: #fff;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 35%);
+}
+.portrait-label-name {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: Instrument, Georgia, serif;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+.portrait-label-credentials {
+  display: grid;
+  gap: 3px;
+  text-align: right;
+}
+.portrait-label-arrow {
+  font-family: DM, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1;
+}
+@container (max-width: 490px) {
+  .portrait-label {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .portrait-label-credentials {
+    grid-column: 1;
+    text-align: left;
+  }
+}
+@media (max-width: 720px) {
+  .home-hero.home-hero-open {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .open-portrait {
+    max-width: 520px;
+    height: 390px;
+    justify-self: center;
+  }
+}
 .home-landscape {
   position: relative;
 }

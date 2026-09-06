@@ -11,10 +11,12 @@ The shared page chrome has canonical sources:
 Never hand-edit markup between the `shared-header` or `shared-footer` comments in an HTML page. Edit the appropriate partial, then run:
 
 ```sh
-./scripts/sync-shared.sh
-./scripts/sync-shared.sh --check
+make stitch
+make check
 ```
 
-The sync script resolves each page’s relative links and `aria-current` state. Commit the partials, sync script, and synchronized HTML together. Before publishing, also run `git diff --check` and `node --check assets/site.js`.
+If `make` is unavailable, run `python3 scripts/sync-shared.py` and `python3 scripts/sync-shared.py --check` directly. The sync script resolves each page’s relative links and `aria-current` state, then updates the CSS and JavaScript cache-busting hashes from their current contents. Commit the partials, sync script, and synchronized HTML together. Before publishing, also run `git diff --check` and `node --check assets/site.js`.
+
+For local preview with automatic reloads, run `make serve` (or `python3 scripts/preview.py`). The server injects its reload helper into HTTP responses only; never add development reload code to the site files.
 
 GitHub Pages publishes the `gh-pages` branch. Never force-push.

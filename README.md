@@ -7,10 +7,12 @@ A plain HTML, CSS, and JavaScript website for Dr J Edward Perkins. No framework,
 From this directory, run:
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+make serve
 ```
 
-Open http://127.0.0.1:4173.
+Open http://127.0.0.1:4173. The preview server synchronizes shared partial changes and reloads open pages when HTML, CSS, JavaScript, or image files change. Its reload helper is injected only into local HTTP responses; no development code is written into the site or deployed.
+
+The Makefile is only a convenience layer. The equivalent command is `python3 scripts/preview.py`.
 
 ## Edit
 
@@ -39,18 +41,21 @@ Shared markup:
 - `partials/header.html`: announcement bar, logo, and primary navigation.
 - `partials/footer.html`: call-to-action band, contact details, and footer navigation.
 - `partials/brand.html`: logo markup used by both shared partials.
-- `scripts/sync-shared.sh`: mechanically copies the partials into every page, resolving relative paths and the current-page navigation state. It uses only POSIX shell and standard utilities available on macOS and Linux.
+- `scripts/sync-shared.py`: mechanically copies the partials into every page, resolves relative paths and current-page navigation state, and updates CSS/JavaScript cache-busting hashes from the current file contents. It uses only the Python 3 standard library.
+- `scripts/preview.py`: standard-library local server with automatic partial synchronization and browser reloads.
 
 After changing a partial, synchronize and verify the pages:
 
 ```sh
-./scripts/sync-shared.sh
-./scripts/sync-shared.sh --check
+make stitch
+make check
 ```
 
-The synchronizer requires only POSIX `/bin/sh` and standard command-line utilities. It is tested on macOS and in Alpine Linux 3.20 using BusyBox. No Python, Node.js, package installation, or network access is required to synchronize the HTML.
+The synchronizer deliberately uses conservative Python syntax and long-established standard-library modules. It requires no packages, installation, or network access and is tested on both macOS and Linux. `make check` also reports stale cache-busting hashes.
 
-Do not edit between the `shared-header` or `shared-footer` comments in a page; those regions are replaced by the sync script. Keep sitemap entries in sync with page URLs.
+Without `make`, run `python3 scripts/sync-shared.py` and `python3 scripts/sync-shared.py --check` directly.
+
+Do not edit between the `shared-header` or `shared-footer` comments in a page; those generated regions carry an inline `DO NOT EDIT HERE` warning and are replaced by the sync script. Keep sitemap entries in sync with page URLs.
 
 ## Hosting
 
@@ -59,8 +64,8 @@ The site uses GitHub Pages and the existing `CNAME`. Existing page URLs are pres
 Before deployment, run:
 
 ```sh
-./scripts/sync-shared.sh
-./scripts/sync-shared.sh --check
+make stitch
+make check
 git diff --check
 ```
 
