@@ -134,6 +134,9 @@ address {
   justify-content: space-between;
   align-items: center;
 }
+.topline-tagline > span {
+  white-space: nowrap;
+}
 .topline a {
   text-decoration: none;
 }
@@ -999,36 +1002,11 @@ address {
 .contact-address address {
   font-size: 15px;
 }
-.contact-phone {
-  font-family: Instrument, Georgia, serif;
-  font-size: 35px;
-  display: block;
-  text-decoration: none;
-  margin: 20px 0;
-}
-.contact-phone span {
-  font-size: 23px;
-  margin-left: 10px;
-}
-.contact-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  color: var(--forest);
-  font-size: 16px;
-  text-decoration: none;
-  border-bottom: 1px solid #aab3a5;
-}
-.contact-email:hover {
-  border-bottom-color: var(--forest);
-}
-.contact-email span {
-  font-size: 20px;
-  line-height: 1;
-}
-.contact-address .button {
-  margin-top: 10px;
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
 }
 .hours {
   padding: 30px 40px;
@@ -1329,9 +1307,6 @@ address {
   }
   .contact-address h2 {
     font-size: 41px;
-  }
-  .contact-phone {
-    font-size: 29px;
   }
 }
 @media (max-width: 600px) {
@@ -1674,9 +1649,6 @@ address {
   }
   .contact-address h2 {
     font-size: 46px;
-  }
-  .contact-phone {
-    font-size: 35px;
   }
   .hours table {
     font-size: 13px;
@@ -2038,6 +2010,9 @@ body {
   .topline > .wrap {
     font-size: 0.8125rem;
   }
+  .topline-tagline {
+    font-size: 0.75rem;
+  }
   .topline > .wrap {
     padding-block: 8px;
     gap: 12px;
@@ -2085,6 +2060,11 @@ body {
   }
   .carousel-slides {
     aspect-ratio: 2.3;
+  }
+}
+@media (max-width: 360px) {
+  .topline-idaho {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {
