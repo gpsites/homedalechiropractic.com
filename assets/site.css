@@ -728,7 +728,7 @@ address {
 }
 .intro-copy {
   font-size: 14px;
-  max-width: 535px;
+  max-width: clamp(535px, 55vw, 700px);
   margin-top: 25px;
   color: var(--muted);
 }
