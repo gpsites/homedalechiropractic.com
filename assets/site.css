@@ -1010,6 +1010,23 @@ address {
   font-size: 23px;
   margin-left: 10px;
 }
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: var(--forest);
+  font-size: 16px;
+  text-decoration: none;
+  border-bottom: 1px solid #aab3a5;
+}
+.contact-email:hover {
+  border-bottom-color: var(--forest);
+}
+.contact-email span {
+  font-size: 20px;
+  line-height: 1;
+}
 .contact-address .button {
   margin-top: 10px;
 }
@@ -1255,6 +1272,9 @@ address {
   }
   .footer-top > * {
     width: calc(50% - 15px);
+  }
+  .footer-top .brand {
+    width: 8rem;
   }
   .footer-top p {
     max-width: none;
